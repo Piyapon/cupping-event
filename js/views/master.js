@@ -25,7 +25,7 @@ Views.master = function (root) {
 
   root.appendChild(h('header', { class: 'bar' }, h('b', null, State.ev.name), h('span', { class: 'grow' }),
     h('small', null, State.ev.date)));
-  root.appendChild(h('nav', { class: 'tabs scroll' }, tabs.map(function (x) {
+  root.appendChild(h('nav', { class: 'tabs' }, tabs.map(function (x) {
     return h('button', { class: x[0] === tab ? 'on' : '', onclick: function () { App.tab = x[0]; App.editCoffee = null; App.render(); } }, t(x[1]));
   })));
   var main2 = h('main', null);

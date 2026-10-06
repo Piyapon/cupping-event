@@ -35,7 +35,6 @@ input.code { width: 5rem; flex: none; }
 .field small { display: block; margin-top: .15rem; }
 
 .tabs { display: flex; gap: .3rem; padding: .4rem 1rem; max-width: 42rem; margin: 0 auto; flex-wrap: wrap; }
-.tabs.scroll { flex-wrap: nowrap; overflow-x: auto; }
 .tabs button { padding: .4rem .8rem; min-height: 40px; white-space: nowrap; }
 .tabs button.on, .seg button.on, .cup.on { background: var(--accent); color: var(--accent-fg); border-color: var(--accent); }
 .seg { display: flex; gap: .4rem; } .seg button { flex: 1; }
