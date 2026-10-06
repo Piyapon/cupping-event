@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scoring tests</title>
+<style>
+  body { font: 14px/1.5 system-ui, sans-serif; margin: 0; padding: 1rem; max-width: 50rem; }
+  h1 { font-size: 1.2rem; }
+  #summary { font-weight: 600; padding: .5rem .75rem; border-radius: 6px; margin-bottom: 1rem; }
+  #summary.pass { background: #d9f2de; color: #14532d; }
+  #summary.fail { background: #fbdada; color: #7f1d1d; }
+  ul { list-style: none; padding: 0; }
+  li { padding: .35rem 0; border-bottom: 1px solid #ddd; }
+  .pass::before { content: "PASS "; color: #15803d; font-weight: 600; }
+  .fail::before { content: "FAIL "; color: #b91c1c; font-weight: 600; }
+  pre { margin: .25rem 0 0; color: #b91c1c; white-space: pre-wrap; }
+</style>
+</head>
+<body>
+<h1>js/scoring.js acceptance tests (SPEC §11)</h1>
+<div id="summary">Running…</div>
+<ul id="results"></ul>
+<script src="../js/scoring.js"></script>
+<script src="scoring.cases.js"></script>
+<script>
+  var passed = 0, failed = 0, list = document.getElementById('results');
+  ScoringCases.cases.forEach(function (t) {
+    var li = document.createElement('li');
+    try { t.fn(); passed++; li.className = 'pass'; li.textContent = t.name; }
+    catch (e) {
+      failed++; li.className = 'fail'; li.textContent = t.name;
+      var pre = document.createElement('pre'); pre.textContent = e.message; li.appendChild(pre);
+    }
+    list.appendChild(li);
+  });
+  var s = document.getElementById('summary');
+  s.className = failed ? 'fail' : 'pass';
+  s.textContent = passed + ' passed, ' + failed + ' failed';
+  document.title = (failed ? 'FAIL' : 'PASS') + ' — scoring tests';
+</script>
+</body>
+</html>
