@@ -79,3 +79,12 @@ body.show .tabs, body.show .bar { display: none; }
 .bigphoto { max-width: 100%; max-height: 32vh; border-radius: 12px; margin: .5rem auto; display: block; }
 .stagebar { position: fixed; bottom: 0; left: 0; right: 0; display: flex; gap: .6rem; align-items: center; justify-content: center; padding: .6rem; padding-bottom: calc(.6rem + env(safe-area-inset-bottom)); background: var(--bg); border-top: 1px solid var(--line); }
 .slide .card { text-align: left; }
+
+/* Insights */
+.tablewrap { overflow-x: auto; margin: .5rem 0; }
+.tablewrap table { min-width: 38rem; }
+.barrow { display: flex; align-items: center; gap: .5rem; font-size: .9rem; margin: .15rem 0; }
+.barlbl { width: 7rem; flex: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.bartrack { flex: 1; height: .6rem; background: var(--line); border-radius: 4px; overflow: hidden; }
+.barfill { display: block; height: 100%; background: var(--accent); }
+.barval { width: 2.8rem; text-align: right; color: var(--muted); }

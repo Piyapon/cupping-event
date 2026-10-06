@@ -19,7 +19,7 @@ Views.master = function (root) {
     return;
   }
   var tabs = [['setup', 'Setup'], ['coffees', 'Coffees'], ['rounds', 'Rounds'], ['grind', 'Grind'], ['ballots', 'Ballots'],
-    ['finalists', 'Finalists'], ['final', 'Final'], ['reveal', 'Reveal'], ['data', 'Data']];
+    ['finalists', 'Finalists'], ['final', 'Final'], ['reveal', 'Reveal'], ['insights', 'Insights'], ['data', 'Data']];
   var tab = App.tab || 'setup';
   if (tab !== 'reveal') document.body.classList.remove('show');
 

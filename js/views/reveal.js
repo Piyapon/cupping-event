@@ -120,7 +120,7 @@ var Reveal = (function () {
     return box;
   }
 
-  return { build: build, slideEl: slide };
+  return { build: build, slideEl: slide, statsEl: function (st) { return statsSlide({ st: st }); } };
 })();
 
 Views.reveal = function (root) {
